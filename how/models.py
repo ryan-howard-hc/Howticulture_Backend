@@ -1,6 +1,5 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
-from django.utils import timezone
 
 class CustomUser(AbstractUser):
     def __str__(self):
@@ -37,14 +36,9 @@ class Plant(models.Model):
     ph_minimum = models.DecimalField(max_digits=4, decimal_places=2, null=True)
     light = models.PositiveIntegerField(null=True)
     atmospheric_humidity = models.PositiveIntegerField(null=True)
-    ph_maximum = models.DecimalField(max_digits=4, decimal_places=2, null=True)
-    ph_minimum = models.DecimalField(max_digits=4, decimal_places=2, null=True)
-    light = models.PositiveIntegerField(null=True)
-    atmospheric_humidity = models.PositiveIntegerField(null=True)
     soil_nutriments = models.PositiveIntegerField(null=True)
     soil_salinity = models.PositiveIntegerField(null=True)
     soil_texture = models.PositiveIntegerField(null=True)
-    # Add more fields as needed
 
     def __str__(self):
         return self.common_name or self.scientific_name

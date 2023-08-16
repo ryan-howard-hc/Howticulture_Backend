@@ -1,7 +1,7 @@
 from django.urls import path, include
 from rest_framework import routers
 from rest_framework_simplejwt import views as jwt_views
-from .views import UserCreate, UserDetail, plant_list, PlantDetailView
+from .views import UserCreate, UserDetail, plant_list
 
 app_name = 'how'
 
@@ -15,7 +15,4 @@ urlpatterns = [
     path('user/login/', jwt_views.TokenObtainPairView.as_view(), name='token_create'),
     path('token/refresh/', jwt_views.TokenRefreshView.as_view(), name='token_refresh'),
     path('plant-list/', plant_list, name='plant-list'),
-    path('plants/<int:pk>/', PlantDetailView.as_view(), name='plant-detail'),
 ]
-
-# Other

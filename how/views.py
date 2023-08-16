@@ -31,6 +31,3 @@ def plant_list(request):
     plants = Plant.objects.all()
     serializer = PlantSerializer(plants, many=True)
     return Response(serializer.data)
-
-# Other views remain unchanged
-

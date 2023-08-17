@@ -37,3 +37,9 @@ class PlantPhotoList(APIView):
         photos = PlantPhoto.objects.all()
         serializer = PlantPhotoSerializer(photos, many=True)
         return Response(serializer.data)
+    
+class UserFavoritePlantsList(APIView):
+    def get(self, request):
+        favorite_plants = UserFavoritePlants.objects.all()
+        serializer = UserFavoritePlantsSerializer(favorite_plants, many=True)
+        return Response(serializer.data)

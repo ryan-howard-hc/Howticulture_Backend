@@ -16,5 +16,6 @@ urlpatterns = [
     path('token/refresh/', jwt_views.TokenRefreshView.as_view(), name='token_refresh'),
     path('plant-list/', plant_list, name='plant-list'),
     path('plant-photos/', PlantPhotoList.as_view(), name='plant-photo-list'),
+    path('user-favorite-plants/', UserFavoritePlantsList.as_view(), name='user-favorite-plants-list'),
 
 ]

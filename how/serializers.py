@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import CustomUser, Plant
+from .models import *
 
 class CustomUserSerializer(serializers.ModelSerializer):
     email = serializers.EmailField(required=True)
@@ -26,4 +26,9 @@ class PlantSerializer(serializers.ModelSerializer):
 class PlantPhotoSerializer(serializers.ModelSerializer):
     class Meta:
         model = PlantPhoto
+        fields = '__all__'
+
+class UserFavoritePlantsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = UserFavoritePlants
         fields = '__all__'

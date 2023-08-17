@@ -47,6 +47,10 @@ class PlantPhoto(models.Model):
     photo_url = models.URLField(max_length=200)
     plant = models.ForeignKey(Plant, on_delete=models.CASCADE)
     user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
-    photo = models.ImageField(upload_to='plant_photos/')
     def __str__(self):
         return self.photo.name
+    
+    
+class UserFavoritePlants(models.Model):
+    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
+    plant = models.ForeignKey(Plant, on_delete=models.CASCADE)

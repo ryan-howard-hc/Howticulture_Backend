@@ -32,3 +32,8 @@ class UserFavoritePlantsSerializer(serializers.ModelSerializer):
     class Meta:
         model = UserFavoritePlants
         fields = '__all__'
+        
+class UserNotificationSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = UserNotification
+        fields = '__all__'

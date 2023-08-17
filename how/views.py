@@ -43,3 +43,9 @@ class UserFavoritePlantsList(APIView):
         favorite_plants = UserFavoritePlants.objects.all()
         serializer = UserFavoritePlantsSerializer(favorite_plants, many=True)
         return Response(serializer.data)
+    
+class UserNotificationList(APIView):
+    def get(self, request):
+        notifications = UserNotification.objects.all()
+        serializer = UserNotificationSerializer(notifications, many=True)
+        return Response(serializer.data)

@@ -17,5 +17,6 @@ urlpatterns = [
     path('plant-list/', plant_list, name='plant-list'),
     path('plant-photos/', PlantPhotoList.as_view(), name='plant-photo-list'),
     path('user-favorite-plants/', UserFavoritePlantsList.as_view(), name='user-favorite-plants-list'),
+    path('user-notifications/', UserNotificationList.as_view(), name='user-notification-list'),
 
 ]

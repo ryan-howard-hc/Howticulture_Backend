@@ -1,7 +1,7 @@
 from django.urls import path, include
 from rest_framework import routers
 from rest_framework_simplejwt import views as jwt_views
-from .views import UserCreate, UserDetail, plant_list
+from .views import *
 
 app_name = 'how'
 

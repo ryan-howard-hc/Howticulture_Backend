@@ -5,8 +5,8 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework.decorators import api_view
 from rest_framework_simplejwt.views import TokenObtainPairView
-from .models import CustomUser, Plant
-from .serializers import CustomUserSerializer, PlantSerializer
+from .models import *
+from .serializers import *
 
 class UserCreate(APIView):
     permission_classes = (permissions.AllowAny,)
@@ -31,3 +31,9 @@ def plant_list(request):
     plants = Plant.objects.all()
     serializer = PlantSerializer(plants, many=True)
     return Response(serializer.data)
+
+class PlantPhotoList(APIView):
+    def get(self, request):
+        photos = PlantPhoto.objects.all()
+        serializer = PlantPhotoSerializer(photos, many=True)
+        return Response(serializer.data)

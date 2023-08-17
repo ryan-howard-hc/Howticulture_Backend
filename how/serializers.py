@@ -22,3 +22,8 @@ class PlantSerializer(serializers.ModelSerializer):
     class Meta:
         model = Plant
         fields = '__all__'
+        
+class PlantPhotoSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = PlantPhoto
+        fields = '__all__'

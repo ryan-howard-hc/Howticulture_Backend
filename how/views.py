@@ -49,3 +49,9 @@ class UserNotificationList(APIView):
         notifications = UserNotification.objects.all()
         serializer = UserNotificationSerializer(notifications, many=True)
         return Response(serializer.data)
+    
+class CommunityPostList(APIView):
+    def get(self, request):
+        posts = CommunityPost.objects.all()
+        serializer = CommunityPostSerializer(posts, many=True)
+        return Response(serializer.data)
